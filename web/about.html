@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>关于页面</title>
+<meta name="description" content="Katen - 极简博客与杂志HTML主题">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+<!-- STYLES -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<!--[if lt IE 9]><script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body>
+<!-- preloader -->
+<div id="preloader">
+  <div class="book">
+    <div class="inner">
+      <div class="left"></div>
+      <div class="middle"></div>
+      <div class="right"></div>
+    </div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
+<!-- site wrapper -->
+<div class="site-wrapper">
+  <div class="main-overlay"></div>
+  <!-- header -->
+  <header class="header-default">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-xl"><!-- site logo --><a class="navbar-brand" href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+        <div class="collapse navbar-collapse"><!-- menus -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="index.html">首页</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">杂志</a></li>
+                <li><a class="dropdown-item" href="personal.html">个人</a></li>
+                <li><a class="dropdown-item" href="personal-alt.html">个人(简约)</a></li>
+                <li><a class="dropdown-item" href="minimal.html">极简</a></li>
+                <li><a class="dropdown-item" href="classic.html">经典</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="category.html">生活方式</a></li>
+            <li class="nav-item"><a class="nav-link" href="category.html">灵感</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">页面</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="category.html">分类</a></li>
+                <li><a class="dropdown-item" href="blog-single.html">博客详情</a></li>
+                <li><a class="dropdown-item" href="blog-single-alt.html">博客详情(简约)</a></li>
+                <li><a class="dropdown-item" href="about.html">关于</a></li>
+                <li><a class="dropdown-item" href="contact.html">联系</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">联系</a></li>
+          </ul>
+        </div>
+        <!-- header right section -->
+        <div class="header-right">
+          <div class="header-buttons d-flex align-items-center">
+            <div class="search-container">
+              <button class="search-toggle" onclick="toggleSearchBox(event)">
+                <i class="icon-magnifier"></i>
+              </button>
+              <form class="search-form" onsubmit="return false;">
+                <input type="text" class="form-control" placeholder="搜索..." />
+                <button class="search-btn" type="submit">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </form>
+            </div>
+            <div class="position-relative ms-2">
+              <button class="burger-menu icon-button" onclick="toggleUserMenu(event)"><span class="burger-icon"></span></button>
+              <!-- 用户菜单 -->
+              <div id="userMenu" class="user-menu" style="display: none; position: absolute; right: 0; top: 100%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1000; min-width: 200px;">
+                <div class="user-info p-3 border-bottom">
+                  <div class="d-flex align-items-center">
+                    <img src="images/other/author-sm.png" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="用户头像">
+                    <div>
+                      <h6 class="mb-0">用户名</h6>
+                      <small class="text-muted">user@example.com</small>
+                    </div>
+                  </div>
+                </div>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="personal.html" class="dropdown-item py-2 px-3"><i class="icon-user me-2"></i>个人中心</a></li>
+                    <li><a href="favorites.html" class="dropdown-item py-2 px-3"><i class="icon-heart me-2"></i>我的收藏</a></li>
+                    <li><a href="history.html" class="dropdown-item py-2 px-3"><i class="icon-clock me-2"></i>浏览历史</a></li>
+                    <li><a href="liked-history.html" class="dropdown-item py-2 px-3"><i class="icon-like me-2"></i>我的点赞</a></li>
+                    <li><a href="login.html" class="dropdown-item py-2 px-3 text-danger"><i class="icon-logout me-2"></i>退出</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- section main content -->
+  <section class="main-content">
+    <div class="container-xl">
+      <div class="row gy-4">
+        <div class="col-lg-12">
+          <div class="page-content bordered rounded padding-30">
+            <!-- 平台介绍 -->
+            <div class="text-center mb-5">
+              <h2 class="mb-3">欢迎来到我们的博客社区</h2>
+              <p class="lead text-muted">一个让每个人都能分享生活、激发灵感、展现时尚、传承文化的开放平台</p>
+            </div>
+
+            <!-- 平台特色 -->
+            <div class="row mb-5">
+              <div class="col-md-6 mb-4">
+                <div class="feature-card p-4 border rounded h-100">
+                  <div class="text-center mb-3">
+                    <i class="icon-people" style="font-size: 2.5rem; color: #fe5e74;"></i>
+                  </div>
+                  <h4 class="text-center mb-3">开放创作</h4>
+                  <p class="text-center mb-0">所有注册用户都可以自由发表博客，分享你的想法、经验和故事。我们相信每个人都有值得分享的内容。</p>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="feature-card p-4 border rounded h-100">
+                  <div class="text-center mb-3">
+                    <i class="icon-tag" style="font-size: 2.5rem; color: #fe5e74;"></i>
+                  </div>
+                  <h4 class="text-center mb-3">精准分类</h4>
+                  <p class="text-center mb-0">四大核心分类：生活方式、灵感、时尚、文化，让读者快速找到感兴趣的内容，让作者精准触达目标受众。</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 分类介绍 -->
+            <div class="mb-5">
+              <h3 class="text-center mb-4">探索我们的四大分类</h3>
+              <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                  <div class="category-card text-center p-4 border rounded h-100">
+                    <div class="mb-3">
+                      <i class="icon-heart" style="font-size: 2rem; color: #fe5e74;"></i>
+                    </div>
+                    <h5>生活方式</h5>
+                    <p class="small text-muted">分享日常生活的美好瞬间，从健康饮食到旅行体验，从家居装饰到个人成长，记录生活的每一个精彩时刻。</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                  <div class="category-card text-center p-4 border rounded h-100">
+                    <div class="mb-3">
+                      <i class="icon-bulb" style="font-size: 2rem; color: #fe5e74;"></i>
+                    </div>
+                    <h5>灵感</h5>
+                    <p class="small text-muted">激发创意的源泉，分享创意想法、设计灵感、艺术创作，让每一个想法都有机会成为现实。</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                  <div class="category-card text-center p-4 border rounded h-100">
+                    <div class="mb-3">
+                      <i class="icon-diamond" style="font-size: 2rem; color: #fe5e74;"></i>
+                    </div>
+                    <h5>时尚</h5>
+                    <p class="small text-muted">展现个人风格，分享穿搭技巧、时尚趋势、美妆心得，让每个人都能找到属于自己的时尚态度。</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                  <div class="category-card text-center p-4 border rounded h-100">
+                    <div class="mb-3">
+                      <i class="icon-book-open" style="font-size: 2rem; color: #fe5e74;"></i>
+                    </div>
+                    <h5>文化</h5>
+                    <p class="small text-muted">传承文化精髓，分享文学艺术、历史故事、传统文化，让文化的魅力在新时代焕发光彩。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 用户价值 -->
+            <div class="row mb-5">
+              <div class="col-md-6">
+                <h4 class="mb-3">对于作者</h4>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>简单易用的创作工具</li>
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>精准的读者群体定位</li>
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>互动交流的社区氛围</li>
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>个人品牌建设平台</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4 class="mb-3">对于读者</h4>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>丰富多样的优质内容</li>
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>个性化的内容推荐</li>
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>便捷的阅读体验</li>
+                  <li class="mb-2"><i class="icon-check text-success me-2"></i>与作者的直接互动</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 平台愿景 -->
+            <div class="text-center mb-4">
+              <h3 class="mb-3">我们的愿景</h3>
+              <p class="lead">打造一个开放、包容、充满活力的内容创作社区，让每个人都能在这里找到属于自己的声音，让每一个故事都有机会被听见。</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- footer -->
+  <footer>
+    <div class="container-xl">
+      <div class="footer-inner">
+        <div class="row d-flex align-items-center gy-4"><!-- copyright text -->
+          <div class="col-md-4"><span class="copyright">© 2021 Katen. Template by ThemeGer.</span></div>
+          <!-- social icons -->
+          <div class="col-md-4 text-center">
+            <h5 class="mb-3">关注我们</h5>
+            <ul class="social-icons list-unstyled list-inline mb-0">
+              <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+          </div>
+          <!-- go to top button -->
+          <div class="col-md-4"><a href="#" id="return-to-top" class="float-md-end"><i class="icon-arrow-up"></i>返回顶部</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<!-- end site wrapper --><!-- search popup area -->
+<div class="search-popup"><!-- close button -->
+  <button type="button" class="btn-close" aria-label="Close"></button>
+  <!-- content -->
+  <div class="search-content">
+    <div class="text-center">
+      <h3 class="mb-4 mt-0">按ESC关闭</h3>
+    </div>
+    <!-- form -->
+    <form class="d-flex search-form">
+      <input class="form-control me-2" type="search" placeholder="搜索并回车..." aria-label="Search">
+      <button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
+    </form>
+  </div>
+</div>
+<!-- canvas menu -->
+<div class="canvas-menu d-flex align-items-end flex-column"><!-- close button -->
+  <button type="button" class="btn-close" aria-label="Close"></button>
+  <!-- logo -->
+  <div class="logo"><img src="images/logo.svg" alt="Katen" /></div>
+  <!-- menu -->
+  <nav>
+    <ul class="vertical-menu">
+      <li class="active"><a href="index.html">首页</a>
+        <ul class="submenu">
+          <li><a href="index.html">杂志</a></li>
+          <li><a href="personal.html">个人</a></li>
+          <li><a href="personal-alt.html">个人(简约)</a></li>
+          <li><a href="minimal.html">极简</a></li>
+          <li><a href="classic.html">经典</a></li>
+        </ul>
+      </li>
+      <li><a href="category.html">生活方式</a></li>
+      <li><a href="category.html">灵感</a></li>
+      <li><a href="#">页面</a>
+        <ul class="submenu">
+          <li><a href="category.html">分类</a></li>
+          <li><a href="blog-single.html">博客详情</a></li>
+          <li><a href="blog-single-alt.html">博客详情(简约)</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="contact.html">联系</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">联系</a></li>
+    </ul>
+  </nav>
+  <!-- social icons -->
+  <ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
+    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+    <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+    <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
+    <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+  </ul>
+</div>
+<!-- JAVA SCRIPTS --><script src="js/jquery.min.js"></script><script src="js/popper.min.js"></script><script src="js/bootstrap.min.js"></script><script src="js/slick.min.js"></script><script src="js/jquery.sticky-sidebar.min.js"></script><script src="js/custom.js"></script>
+<script>
+function toggleSearchBox(event) {
+  event.stopPropagation();
+  const searchContainer = document.querySelector('.search-container');
+  searchContainer.classList.toggle('active');
+  if (searchContainer.classList.contains('active')) {
+    setTimeout(() => {
+      const input = searchContainer.querySelector('.form-control');
+      if(input) input.focus();
+    }, 100);
+  }
+}
+
+document.addEventListener('click', function(event) {
+  const searchContainer = document.querySelector('.search-container');
+  if (!searchContainer.contains(event.target)) {
+    searchContainer.classList.remove('active');
+  }
+});
+function toggleUserMenu(event) {
+  event.stopPropagation();
+  const menu = document.getElementById('userMenu');
+  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+document.addEventListener('click', function(event) {
+  const menu = document.getElementById('userMenu');
+  const burgerButton = document.querySelector('.burger-menu');
+  if (!menu.contains(event.target) && !burgerButton.contains(event.target)) {
+    menu.style.display = 'none';
+  }
+});
+</script>
+<style>
+.user-menu {
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.user-menu .dropdown-item,
+.user-menu .dropdown-item:hover,
+.user-menu .dropdown-item:active,
+.user-menu .dropdown-item:focus {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  font-weight: 400;
+  outline: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+.user-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #fe5e74;
+}
+.user-menu .text-danger,
+.user-menu .text-danger:hover,
+.user-menu .text-danger:active,
+.user-menu .text-danger:focus {
+  color: #dc3545 !important;
+  background: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  font-weight: 400;
+  outline: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.user-menu .text-danger:hover {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+.burger-menu {
+  cursor: pointer;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.search-toggle {
+  color: #fe5e74;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.search-toggle:hover {
+  background: rgba(254,94,116,0.08);
+  color: #fe5e74;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  padding: 0 8px 0 0;
+  margin-left: 0;
+  height: 40px;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s cubic-bezier(.4,2,.6,1);
+  position: relative;
+}
+.search-container:not(.active) .search-form {
+  width: 0;
+  padding: 0;
+  border: none;
+}
+.search-container.active .search-toggle {
+  display: none;
+}
+.search-container.active .search-form {
+  width: 260px;
+  padding: 0 8px 0 0;
+}
+.search-form .form-control {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 20px;
+  padding: 8px 40px 8px 16px;
+  font-size: 15px;
+  background: transparent;
+  flex: 1;
+}
+.search-form .search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fe5e74;
+  font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+}
+.search-form .search-btn:hover {
+  color: #fe5e74;
+}
+.icon-button {
+  cursor: pointer;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: #fe5e74;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.icon-button:hover {
+  background-color: rgba(254, 94, 116, 0.08);
+  color: #fe5e74;
+}
+.burger-icon {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.burger-icon:before,
+.burger-icon:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+}
+.burger-icon:before {
+  top: -6px;
+}
+.burger-icon:after {
+  bottom: -6px;
+}
+.icon-button:hover .burger-icon:before {
+  transform: translateY(2px);
+}
+.icon-button:hover .burger-icon:after {
+  transform: translateY(-2px);
+}
+.search-container .search.icon-button {
+  display: flex;
+}
+.search-container.active .search.icon-button {
+  display: none;
+}
+</style>
+</body>
+</html>

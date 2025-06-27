@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>编辑资料</title>
+  <meta name="description" content="编辑用户资料 - Katen 博客">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/all.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  <style>
+    .avatar-edit-wrapper {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .avatar-edit-icon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fe5e74;
+      font-size: 20px;
+      opacity: 0;
+      transition: opacity 0.2s;
+      border: 1px solid #eee;
+    }
+    .avatar-edit-wrapper:hover .avatar-edit-icon {
+      opacity: 1;
+    }
+    .avatar-edit-input {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="header-default">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-xl">
+          <a class="navbar-brand" href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+        </div>
+      </nav>
+    </header>
+    <section class="main-content">
+      <div class="container-xl">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="padding-30 rounded bordered bg-white mb-4">
+              <h3 class="mb-4 text-center">编辑个人资料</h3>
+              <form>
+                <div class="text-center mb-4">
+                  <div class="avatar-edit-wrapper" onclick="document.getElementById('avatarInput').click()">
+                    <img id="avatarImg" src="images/other/avatar-lg.png" class="rounded-circle" style="width:100px;height:100px;object-fit:cover;" alt="用户头像">
+                    <span class="avatar-edit-icon"><i class="icon-note"></i></span>
+                    <input id="avatarInput" class="avatar-edit-input" type="file" accept="image/*" onchange="previewAvatar(event)">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">用户名</label>
+                  <input type="text" class="form-control" value="张三" placeholder="请输入用户名">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">邮箱</label>
+                  <input type="email" class="form-control" value="zhangsan@example.com" placeholder="请输入邮箱">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">年龄</label>
+                  <input type="number" class="form-control" value="18" min="0" max="120" placeholder="请输入年龄">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">性别</label>
+                  <select class="form-select">
+                    <option value="1" selected>男</option>
+                    <option value="2">女</option>
+                    <option value="3">不确定</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">手机号码</label>
+                  <input type="text" class="form-control" value="13800000000" placeholder="请输入手机号码">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">地址</label>
+                  <input type="text" class="form-control" value="北京市朝阳区XX路XX号" placeholder="请输入地址">
+                </div>
+                <div class="d-flex justify-content-between">
+                  <a href="personal.html" class="btn btn-light">返回</a>
+                  <button type="submit" class="btn btn-default">保存</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container-xl">
+        <div class="footer-inner">
+          <div class="row d-flex align-items-center gy-4">
+            <div class="col-md-4"><span class="copyright">© 2021 Katen. Template by ThemeGer.</span></div>
+            <div class="col-md-4 text-center">
+              <ul class="social-icons list-unstyled list-inline mb-0">
+                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4"><a href="#" id="return-to-top" class="float-md-end"><i class="icon-arrow-up"></i>返回顶部</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.sticky-sidebar.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    function previewAvatar(event) {
+      const input = event.target;
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('avatarImg').src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+</body>
+</html> 

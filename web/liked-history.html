@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>我的点赞 - Katen</title>
+  <meta name="description" content="Katen - 极简博客与杂志HTML主题">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <!-- STYLES -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/all.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  <style>
+    .table-actions button {
+      border: none;
+      background: none;
+      color: #fe5e74;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 8px;
+    }
+
+    .table-actions button:hover {
+      color: #dc3545;
+    }
+
+    .table-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  </style>
+  <style>
+    .user-menu {
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    .user-menu .dropdown-item,
+    .user-menu .dropdown-item:hover,
+    .user-menu .dropdown-item:active,
+    .user-menu .dropdown-item:focus {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 8px 16px;
+      border: none;
+      font-weight: 400;
+      outline: none;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .user-menu .dropdown-item:hover {
+      background-color: #f8f9fa;
+      color: #fe5e74;
+    }
+
+    .user-menu .text-danger,
+    .user-menu .text-danger:hover,
+    .user-menu .text-danger:active,
+    .user-menu .text-danger:focus {
+      color: #dc3545 !important;
+      background: none;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 8px 16px;
+      border: none;
+      font-weight: 400;
+      outline: none;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .user-menu .text-danger:hover {
+      background-color: #dc3545 !important;
+      color: #fff !important;
+    }
+
+    .burger-menu {
+      cursor: pointer;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .search-toggle {
+      color: #fe5e74;
+      background: none;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .search-toggle:hover {
+      background: rgba(254, 94, 116, 0.08);
+      color: #fe5e74;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      padding: 0 8px 0 0;
+      margin-left: 0;
+      height: 40px;
+      width: 0;
+      overflow: hidden;
+      transition: width 0.3s cubic-bezier(.4, 2, .6, 1);
+      position: relative;
+    }
+
+    .search-container:not(.active) .search-form {
+      width: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .search-container.active .search-toggle {
+      display: none;
+    }
+
+    .search-container.active .search-form {
+      width: 260px;
+      padding: 0 8px 0 0;
+    }
+
+    .search-form .form-control {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      border-radius: 20px;
+      padding: 8px 40px 8px 16px;
+      font-size: 15px;
+      background: transparent;
+      flex: 1;
+    }
+
+    .search-form .search-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #fe5e74;
+      font-size: 18px;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .search-form .search-btn:hover {
+      color: #fe5e74;
+    }
+
+    .icon-button {
+      cursor: pointer;
+      padding: 8px;
+      border: none;
+      background: none;
+      color: #fe5e74;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .icon-button:hover {
+      background-color: rgba(254, 94, 116, 0.08);
+      color: #fe5e74;
+    }
+
+    .burger-icon {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: currentColor;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .burger-icon:before,
+    .burger-icon:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: currentColor;
+      transition: all 0.3s ease;
+    }
+
+    .burger-icon:before {
+      top: -6px;
+    }
+
+    .burger-icon:after {
+      bottom: -6px;
+    }
+
+    .icon-button:hover .burger-icon:before {
+      transform: translateY(2px);
+    }
+
+    .icon-button:hover .burger-icon:after {
+      transform: translateY(-2px);
+    }
+
+    .search-container .search.icon-button {
+      display: flex;
+    }
+
+    .search-container.active .search.icon-button {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- site wrapper -->
+  <div class="site-wrapper">
+    <div class="main-overlay"></div>
+    <!-- header -->
+    <header class="header-default">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-xl">
+          <!-- site logo --><a class="navbar-brand" href="index.html">
+            <img src="images/logo.svg"alt="logo" />
+          </a>
+          <div class="collapse navbar-collapse"><!-- menus -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown active"><a class="nav-link" href="index.html">首页</a></li>
+              <li class="nav-item"><a class="nav-link" href="category.html">生活方式</a></li>
+              <li class="nav-item"><a class="nav-link" href="classic.html">灵感</a></li>
+              <li class="nav-item"><a class="nav-link" href="personal-alt.html">时尚</a></li>
+              <li class="nav-item"><a class="nav-link" href="classic.html">文化</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">关于我们</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="about.html">关于</a></li>
+                  <li><a class="dropdown-item" href="authors.html">作者中心</a></li>
+                  <li><a class="dropdown-item" href="contact.html">联系</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- header right section -->
+          <div class="header-right">
+            <div class="header-buttons d-flex align-items-center">
+              <div class="search-container active"><!-- 默认展开 -->
+                <form class="search-form" onsubmit="return false;">
+                  <input type="text" class="form-control" placeholder="搜索..." />
+                  <button class="search-btn" type="submit">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </form>
+              </div>
+              <div class="position-relative ms-2">
+                <button class="burger-menu icon-button" onclick="toggleUserMenu(event)"><span
+                    class="burger-icon"></span></button>
+                <!-- 用户菜单 -->
+                <div id="userMenu" class="user-menu"
+                  style="display: none; position: absolute; right: 0; top: 100%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1000; min-width: 200px;">
+                  <div class="user-info p-3 border-bottom">
+                    <div class="d-flex align-items-center">
+                      <img src="images/other/author-sm.png" class="rounded-circle me-2"
+                        style="width: 40px; height: 40px;" alt="用户头像">
+                      <div>
+                        <h6 class="mb-0">用户名</h6>
+                        <small class="text-muted">user@example.com</small>
+                      </div>
+                    </div>
+                  </div>                  <ul class="list-unstyled mb-0">
+                    <li><a href="personal.html" class="dropdown-item py-2 px-3"><i class="icon-user me-2"></i>个人中心</a></li>
+                    <li><a href="favorites.html" class="dropdown-item py-2 px-3"><i class="icon-heart me-2"></i>我的收藏</a></li>
+                    <li><a href="history.html" class="dropdown-item py-2 px-3"><i class="icon-clock me-2"></i>浏览历史</a></li>
+                    <li><a href="liked-history.html" class="dropdown-item py-2 px-3"><i class="icon-like me-2"></i>我的点赞</a></li>
+                    <li><a href="login.html" class="dropdown-item py-2 px-3 text-danger"><i class="icon-logout me-2"></i>退出</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- section main content -->
+    <section class="main-content">
+      <div class="container-xl">
+        <div class="row gy-4">
+          <div class="col-lg-10 mx-auto">
+            <!-- section header -->
+            <div class="section-header">
+              <h3 class="section-title">我的点赞</h3>
+              <img src="images/wave.svg" class="wave" alt="wave" />
+            </div>
+
+            <div class="padding-30 rounded bordered bg-white">
+              <div class="table-responsive">
+                <table class="table align-middle text-center">
+                  <thead class="table-light">
+                    <tr>
+                      <th>封面</th>
+                      <th>标题</th>
+                      <th>作者</th>
+                      <th>点赞时间</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="likedHistoryTable">
+                    <tr>
+                      <td><a href="blog-single.html"><img src="images/posts/post-md-9.jpg" class="table-avatar" alt=""></a>
+                      </td>
+                      <td><a href="blog-single.html">高效能人士的七个习惯</a></td>
+                      <td>李华</td>
+                      <td>2025-06-25</td>
+                      <td class="table-actions">
+                        <button onclick="unlike(this)"><i class="icon-heart"></i> 取消点赞</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="blog-single.html"><img src="images/posts/post-md-10.jpg" class="table-avatar" alt=""></a>
+                      </td>
+                      <td><a href="blog-single.html">深度工作：如何有效利用你的时间</a></td>
+                      <td>王明</td>
+                      <td>2025-06-24</td>
+                      <td class="table-actions">
+                        <button onclick="unlike(this)"><i class="icon-heart"></i> 取消点赞</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div id="noLikedHistory" style="display:none;" class="text-center text-muted py-4">暂无点赞记录</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- JAVA SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.sticky-sidebar.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    function unlike(btn) {
+      var row = btn.closest('tr');
+      row.parentNode.removeChild(row);
+      if (document.querySelectorAll('#likedHistoryTable tr').length === 0) {
+        document.getElementById('noLikedHistory').style.display = 'block';
+      }
+    }
+  </script>
+  <script>
+    function toggleUserMenu(event) {
+      event.stopPropagation();
+      const menu = document.getElementById('userMenu');
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    }
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('userMenu');
+      const burgerButton = document.querySelector('.burger-menu');
+      if (!menu.contains(event.target) && !burgerButton.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

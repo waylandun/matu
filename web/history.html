@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>浏览历史 - Katen</title>
+  <meta name="description" content="Katen - 极简博客与杂志HTML主题">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <!-- STYLES -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/all.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  <style>
+    .table-actions button {
+      border: none;
+      background: none;
+      color: #fe5e74;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 8px;
+    }
+
+    .table-actions button:hover {
+      color: #dc3545;
+    }
+
+    .table-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- site wrapper -->
+  <div class="site-wrapper">
+    <div class="main-overlay"></div>
+    <!-- header -->
+    <header class="header-default">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-xl">
+          <!-- site logo -->
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.svg" alt="logo" />
+          </a>
+          <div class="collapse navbar-collapse">
+            <!-- menus -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+              <li class="nav-item"><a class="nav-link" href="category.html">生活方式</a></li>
+              <li class="nav-item"><a class="nav-link" href="classic.html">灵感</a></li>
+              <li class="nav-item"><a class="nav-link" href="personal-alt.html">时尚</a></li>
+              <li class="nav-item"><a class="nav-link" href="classic.html">文化</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- section main content -->
+    <section class="main-content">
+      <div class="container-xl">
+        <div class="row gy-4">
+          <div class="col-lg-10 mx-auto">
+            <!-- section header -->
+            <div class="section-header">
+              <h3 class="section-title">浏览历史</h3>
+              <img src="images/wave.svg" class="wave" alt="wave" />
+            </div>
+
+            <div class="padding-30 rounded bordered bg-white">
+              <div class="table-responsive">
+                <table class="table align-middle text-center">
+                  <thead class="table-light">
+                    <tr>
+                      <th>封面</th>
+                      <th>标题</th>
+                      <th>作者</th>
+                      <th>浏览时间</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="historyTable">
+                    <tr>
+                      <td><a href="blog-single.html"><img src="images/posts/post-md-5.jpg" class="table-avatar" alt=""></a>
+                      </td>
+                      <td><a href="blog-single.html">如何高效管理你的时间</a></td>
+                      <td>小明</td>
+                      <td>2025-06-22</td>
+                      <td class="table-actions">
+                        <button onclick="removeHistory(this)"><i class="icon-trash"></i> 删除</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="blog-single.html"><img src="images/posts/post-md-6.jpg" class="table-avatar" alt=""></a>
+                      </td>
+                      <td><a href="blog-single.html">极简生活的五个建议</a></td>
+                      <td>小红</td>
+                      <td>2025-06-21</td>
+                      <td class="table-actions">
+                        <button onclick="removeHistory(this)"><i class="icon-trash"></i> 删除</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="blog-single.html"><img src="images/posts/post-md-7.jpg" class="table-avatar" alt=""></a>
+                      </td>
+                      <td><a href="blog-single.html">数字时代的专注力训练</a></td>
+                      <td>小刚</td>
+                      <td>2025-06-19</td>
+                      <td class="table-actions">
+                        <button onclick="removeHistory(this)"><i class="icon-trash"></i> 删除</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="blog-single.html"><img src="images/posts/post-md-8.jpg" class="table-avatar" alt=""></a>
+                      </td>
+                      <td><a href="blog-single.html">健康生活，从早睡早起开始</a></td>
+                      <td>小美</td>
+                      <td>2025-06-17</td>
+                      <td class="table-actions">
+                        <button onclick="removeHistory(this)"><i class="icon-trash"></i> 删除</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div id="noHistory" style="display:none;" class="text-center text-muted py-4">暂无浏览记录</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- JAVA SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.sticky-sidebar.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    function removeHistory(btn) {
+      var row = btn.closest('tr');
+      row.parentNode.removeChild(row);
+      if (document.querySelectorAll('#historyTable tr').length === 0) {
+        document.getElementById('noHistory').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+
+</html>
